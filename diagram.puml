@@ -1,23 +1,40 @@
-@startuml Dishwasher
+@startuml AquariumFilter
+
+title Aquarium Filter Automatision
 
 start
 :Idle;
 
-if ("Normal" pressed?) then (yes)
-  :Start Normal program;
-  :Fill water;
-  :Wash dishes;
-  :Rinse dishes;
-  :Dry dishes;
+if ("Start pressed?") then (yes)
+  :Start 30s timer;
+  fork
+    
+    :Filter water pump on 30s;
+  fork again
+    :Wait 10 seconds;
+    :CO2 ON;
+    :Wait until 20 seconds;
+    :CO2 OFF;
+  fork again
+    :Wait 5 seconds;
+    :Lights ON;
+    :Wait untill 25 seconds;
+    :Lights OFF;
+  fork again
+    :Temperature sensor reads water temp continuously;
+    if (Temp < Setpoint?) then (yes)
+        :Heater ON;
+    else (no)
+        :Heater OFF;
+    endif
+    :Repeat temperature loop 30s;
+  end fork
+
+  :End of 30s cycle;
+  :Return to Idle;
+
 else (no)
-if ("Eco" pressed?) then (yes)
-  :Start Eco program;
-  :Fill water (less);
-  :Wash dishes (short);
-  :Rinse dishes;
-  :Dry dishes (short);
-else (no)
-  :Remain idle;
+  :Remain Idle;
 endif
 
 stop
