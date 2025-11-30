@@ -20,12 +20,12 @@ if ("Start pressed?") then (yes)
     
     :Filter water pump on 30s;
   fork again
-    :Wait 10 seconds;
+    :Wait 5 seconds;
     :CO2 ON;
     :Wait until 20 seconds;
     :CO2 OFF;
   fork again
-    :Wait 5 seconds;
+    :Wait 10 seconds;
     :Lights ON;
     :Wait untill 25 seconds;
     :Lights OFF;

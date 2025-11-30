@@ -19,7 +19,7 @@ This functionblock heats the water when it is below the setpoint by 1 degree per
 
 # FUNCTIONBLOCK light
 
-This functionblock turns the lights on and off for 20 seconds every cycle. 
+This functionblock turns the lights on and off for 15 seconds every cycle. 
 
 ![light](fb_light.png)
 
