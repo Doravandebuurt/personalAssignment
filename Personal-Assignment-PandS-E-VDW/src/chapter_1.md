@@ -51,4 +51,3 @@ stop
 @enduml
 ```
 
-Some more text.
