@@ -9,7 +9,7 @@ The proces that my virtual PLC program describes, is the automation of handeling
 ```plantuml
 @startuml AquariumFilter
 
-title Aquarium Filter Automatision
+title Aquarium Filter Automation
 
 start
 :Idle;

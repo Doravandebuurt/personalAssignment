@@ -4,7 +4,7 @@ This is what the PLC visualisation looks like. lamps are used to indicate when a
 
 - "On/Off" button to start or stop the process
 - "decrease temp -5 degrees" button to cool the water down by 5 degrees. the water cant get cooler than 15 degrees and it cant get warmer above the setpoint
--"reset water to 30 degrees" button, to set the water temperature to 30 degrees.
+- "reset water to 30 degrees" button, to set the water temperature to 30 degrees.
 
 ![visualisation](./VISU.png)
 
