@@ -13,7 +13,7 @@ This functionblock filters the water for 30 seconds by pumping/filtering for 3 s
 
 # FUNCTIONBLOCK heating
 
-This functionblock heats the water when it is below the setpoint by 1 degree per second. 
+This functionblock heats the water when it is below the setpoint by 1 degree per 2 second. 
 
 ![heater](fb_heating.png)
 
