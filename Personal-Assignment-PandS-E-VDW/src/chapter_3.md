@@ -26,7 +26,7 @@ This functionblock turns the lights on and off for 20 seconds every cycle.
 # FUNCTIONBLOCK cooling
 
 This functionblock simulates the water cooling down 1 degree every two seconds. with a limit of 15 degrees at its lowest.
-![watercooling](fbwatercooling.png)
+![watercooling](fb_watercooling.png)
 
 
 
