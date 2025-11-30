@@ -1,37 +1,46 @@
-@startuml AquariumFilter
+@startuml CompressionMachine
 
-title Aquarium Filter Automatision
+title Continuous Compression Machine with Extrusion Feedback
 
 start
 :Idle;
 
-if ("Start pressed?") then (yes)
-  :Start 30s timer;
+if ("Start signal AND Extrusion Ready?") then (yes)
+  :Enter RUN mode;
+
   fork
-    
-    :Filter water pump on 30s;
+    :Continuous MOVE motion;
+    repeat
+      if ("Material Flow Sensor OK?") then (yes)
+        :Maintain conveyor speed;
+      else (no)
+        :Slow down / stop conveyor;
+      endif
+    repeat while (RUN mode)
   fork again
-    :Wait 10 seconds;
-    :CO2 ON;
-    :Wait until 20 seconds;
-    :CO2 OFF;
+    :Continuous PRESS motion;
+    repeat
+      if ("Thickness Sensor in range?") then (yes)
+        :Keep press force constant;
+      else (no)
+        :Adjust press force;
+      endif
+    repeat while (RUN mode)
   fork again
-    :Wait 5 seconds;
-    :Lights ON;
-    :Wait untill 25 seconds;
-    :Lights OFF;
-  fork again
-    :Temperature sensor reads water temp continuously;
-    if (Temp < Setpoint?) then (yes)
-        :Heater ON;
-    else (no)
-        :Heater OFF;
-    endif
-    :Repeat temperature loop 30s;
+    :Feedback from Extruder;
+    repeat
+      if ("Extruder Output HIGH?") then (yes)
+        :Increase compression speed;
+      else
+        :Decrease compression speed;
+      endif
+    repeat while (RUN mode)
   end fork
 
-  :End of 30s cycle;
-  :Return to Idle;
+  :Stop condition? (No material / alarm / stop button);
+
+  :Exit RUN mode;
+  :Go to Idle;
 
 else (no)
   :Remain Idle;
