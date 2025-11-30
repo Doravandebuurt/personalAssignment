@@ -1,6 +1,10 @@
 # 2. PLC PROGRAM
 
-This is what the PLC visualisation looks like. lamps are used to indicate when a sertain function is executed.
+This is what the PLC visualisation looks like. lamps are used to indicate when a sertain function is executed. There are three buttons.
+
+- "On/Off" button to start or stop the process
+- "decrease temp -5 degrees" button to cool the water down by 5 degrees. the water cant get cooler than 15 degrees and it cant get warmer above the setpoint
+-"reset water to 30 degrees" button, to set the water temperature to 30 degrees.
 
 ![visualisation](./VISU.png)
 
