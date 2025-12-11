@@ -1,4 +1,4 @@
-# 1. Proces state diagram
+# 1. Machine state diagram
 
 
 
