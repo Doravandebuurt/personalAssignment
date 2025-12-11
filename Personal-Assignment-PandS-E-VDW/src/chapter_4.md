@@ -5,7 +5,7 @@
 ```plantuml
 
 
-@startuml
+@startuml machine state diagram
 
 
 OFF -> ON : ON BUTTON
