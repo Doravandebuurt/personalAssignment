@@ -4,6 +4,8 @@ The Twincat plc bakcup is in a seperate repository:
 
 https://github.com/Doravandebuurt/personalassignmentPLC
 
+https://github.com/Doravandebuurt/personalassignmentPLC.git
+
 The proces that my virtual PLC program describes, is the automation of handeling of water in an aquarium. the Flowchart of the process can be find below.
 
 ```plantuml
