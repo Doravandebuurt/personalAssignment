@@ -1,4 +1,4 @@
-# 1. Machine state diagram, 2 task
+# 1. Machine state diagram, 3 task
 '''
 @startuml TASKS
 
