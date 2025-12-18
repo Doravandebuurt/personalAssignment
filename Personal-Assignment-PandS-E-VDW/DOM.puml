@@ -1,8 +1,0 @@
-@startuml esmee_leest_niet_goed
-
-TEMPERATURE_MEASURE->HEATING: TURN_ON
-TEMPERATURE_MEASURE->HEATING: TURN_OFF
-
-
-@enduml
-```
