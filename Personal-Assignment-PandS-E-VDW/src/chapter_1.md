@@ -1,4 +1,4 @@
-# 1. Proces Flowchart
+# 1. Proces STATE chart
 
 The Twincat plc bakcup is in a seperate repository:
 

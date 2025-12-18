@@ -1,4 +1,4 @@
-#sequence diagram
+# *. OLD
 '''
 @startuml machine sequence diagram
 
