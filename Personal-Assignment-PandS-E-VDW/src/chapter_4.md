@@ -1,7 +1,8 @@
 # 1. Machine SEQ diagram
 
 '''
-@startuml TASKS sequence
+@startuml
+
 
 
 MAIN -> TEMPERATURE_MEASURE : AAN/UIT_KNOP
