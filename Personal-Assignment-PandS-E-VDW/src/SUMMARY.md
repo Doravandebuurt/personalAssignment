@@ -4,4 +4,5 @@
 - [Machine State diagram](chapter_4.md)
 - [PLC PROGRAM](./chapter_2.md)
 - [functionblocks](./chapter_3.md)
+- [SEQUENCE DIAGRAM 3 TASKS](./chapter_5.md)
 
