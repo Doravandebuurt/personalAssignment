@@ -1,6 +1,6 @@
 # 1. Machine SEQ diagram
 
-'''
+
 @startuml
 
 
@@ -16,5 +16,5 @@ HEATING --> TEMPERATURE_MEASURE: FEEDBACK HEATING AAN/UIT
 
 
 @enduml
-```
+
 
