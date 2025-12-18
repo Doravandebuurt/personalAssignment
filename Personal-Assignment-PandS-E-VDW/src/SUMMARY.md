@@ -1,8 +1,8 @@
 # Summary
 
-- [Proces Flowchart](./chapter_1.md)
-- [Machine State diagram](chapter_4.md)
+- [Proces STATEhart](./chapter_1.md)
+- [Machine SEQ diagram](chapter_4.md)
 - [PLC PROGRAM](./chapter_2.md)
 - [functionblocks](./chapter_3.md)
-- [SEQUENCE DIAGRAM 3 TASKS](./chapter_5.md)
+- [OLD](./chapter_5.md)
 
