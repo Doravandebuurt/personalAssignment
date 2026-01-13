@@ -5,11 +5,11 @@ sequence diagram:<br>
 @startuml
 
 @startuml
-MAIN -> TEMPERATURE_MONITOR : GVL_TEMP_SETPOINT
-MAIN <-> TEMPERATURE_MONITOR : GVL_TEMP_SENSOR
-MAIN -> HEATING : GVL_TEMP_SETPOINT
-MAIN -> HEATING : GVL_TEMP_SENSOR
-HEATING -> TEMPERATURE_MONITOR : GVL_HEATER
+MAIN -> TEMPERATURE_MONITOR : doorgeven temp setpoint
+MAIN <-> TEMPERATURE_MONITOR : instellen en lezen temp
+MAIN -> HEATING : instellen temp setpoint
+MAIN -> HEATING : resetten temp setpoint
+HEATING -> TEMPERATURE_MONITOR : doorgeven heater aan/uit
 @enduml
 
 @enduml
