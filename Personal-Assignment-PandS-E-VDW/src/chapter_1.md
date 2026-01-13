@@ -1,4 +1,4 @@
-# 1. Proces STATE chart
+# 1. Proces STATE DIAGRAM
 
 The Twincat plc bakcup is in a seperate repository:
 
@@ -6,50 +6,52 @@ https://github.com/Doravandebuurt/personalassignmentPLC
 
 https://github.com/Doravandebuurt/personalassignmentPLC.git
 
-
-
 ```plantuml
-@startuml AquariumFilter
 
-title Aquarium Filter Automation
+@startuml
 
-start
-:Idle;
+state COOLING.REDUCE_TEMP_SENSOR
+state COOLING.INCREASE_TEMP_SENSOR
 
-if ("Start pressed?") then (yes)
-  :Start 30s timer;
-  fork
-    
-    :Filter water pump on 30s;
-  fork again
-    :Wait 5 seconds;
-    :CO2 ON;
-    :Wait until 20 seconds;
-    :CO2 OFF;
-  fork again
-    :Wait 10 seconds;
-    :Lights ON;
-    :Wait untill 25 seconds;
-    :Lights OFF;
-  fork again
-    :Temperature sensor reads water temp continuously;
-    if (Temp < Setpoint?) then (yes)
-        :Heater ON;
-    else (no)
-        :Heater OFF;
-    endif
-    :Repeat temperature loop 30s;
-  end fork
+state HEATING.HEATING_TRUE
+state HEATING.HEATING_FALSE
 
-  :End of 30s cycle;
-  :Return to Idle;
+state LIGHT.LAMP_ON
+state LIGHT.LAMP_OFF
 
-else (no)
-  :Remain Idle;
-endif
+state main.START
+state main.STOP
 
-stop
+state CO2.CO2_ON
+state CO2.CO2_OFF
+
+state FILTER.FILTER_ON
+state FILTER.FILTER_OFF
+
+START-->FILTER_ON
+START-->LIGHT.LAMP_ON
+START-->CO2.CO2_ON
+START-->HEATING_TRUE
+STOP-->FILTER_OFF
+STOP-->LAMP_OFF
+STOP-->HEATING_FALSE
+STOP-->CO2.CO2_OFF
+LAMP_ON -->LAMP_OFF : LOCAL_TIMER
+LAMP_OFF-->LAMP_ON
+CO2_ON-->CO2_OFF : LOCAL_TIMER
+CO2_OFF-->CO2_ON
+FILTER_ON-->FILTER_OFF : LOCAL_TIMER
+FILTER_OFF-->FILTER_ON
+' Temperature control logic
+HEATING.HEATING_FALSE --> HEATING.HEATING_TRUE : GVL_TempSensor < GVL_TempSetpoint
+HEATING.HEATING_TRUE --> HEATING.HEATING_FALSE : GVL_TempSensor >= GVL_TempSetpoint
+
+' Optional: heating affecting cooling
+HEATING.HEATING_TRUE --> COOLING.INCREASE_TEMP_SENSOR
+HEATING.HEATING_FALSE --> COOLING.REDUCE_TEMP_SENSOR
 
 @enduml
-```
+```plantuml
+
+
 
