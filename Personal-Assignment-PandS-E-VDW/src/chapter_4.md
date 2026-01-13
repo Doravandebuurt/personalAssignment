@@ -1,5 +1,6 @@
 # 1. Machine SEQ diagram between 3 tasks
-sequence diagram:
+sequence diagram:<br>
+
 ```plantuml
 @startuml
 
